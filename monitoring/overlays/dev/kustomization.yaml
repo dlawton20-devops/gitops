@@ -4,5 +4,5 @@ resources:
 patches:
   - path: values-dev.yaml
     target:
-      kind: ConfigMap
-      name: monitoring-values
+      kind: Bundle
+      name: monitoring

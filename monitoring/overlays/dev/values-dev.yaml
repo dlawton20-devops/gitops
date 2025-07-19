@@ -1,2 +1,5 @@
-grafana:
-  adminPassword: "dev123"
+spec:
+  helm:
+    values:
+      grafana:
+        adminPassword: "dev123"
