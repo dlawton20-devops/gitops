@@ -4,5 +4,5 @@ resources:
 patches:
   - path: values-dev.yaml
     target:
-      kind: Bundle
+      kind: HelmOp
       name: monitoring

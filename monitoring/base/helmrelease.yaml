@@ -1,12 +1,12 @@
 apiVersion: fleet.cattle.io/v1alpha1
-kind: Bundle
+kind: HelmOp
 metadata:
   name: monitoring
-  namespace: monitoring
+  namespace: fleet-local
 spec:
   helm:
-    chart: nginx
-    version: "15.3.4"
-    repo: https://charts.bitnami.com/bitnami
-    values:
-      replicaCount: 1
+    releaseName: monitoring
+    repo: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    version: "55.5.0"
+  namespace: monitoring
