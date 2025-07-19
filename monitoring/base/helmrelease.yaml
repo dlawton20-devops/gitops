@@ -1,5 +1,5 @@
 apiVersion: fleet.cattle.io/v1alpha1
-kind: HelmOp
+kind: HelmApp
 metadata:
   name: monitoring
   namespace: fleet-local
