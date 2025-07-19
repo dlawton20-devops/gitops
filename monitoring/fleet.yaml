@@ -4,4 +4,4 @@ targets:
   - name: dev-clusters
     clusterSelector:
       matchLabels:
-        env: dev
+        env: dev 

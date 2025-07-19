@@ -1,12 +1,13 @@
 apiVersion: fleet.cattle.io/v1alpha1
-kind: HelmRelease
+kind: Bundle
 metadata:
   name: monitoring
   namespace: monitoring
 spec:
-  chart: kube-prometheus-stack
-  version: "55.5.0"
-  repo: https://prometheus-community.github.io/helm-charts
-  valuesFrom:
-    - kind: ConfigMap
-      name: monitoring-values
+  helm:
+    chart: kube-prometheus-stack
+    version: "55.5.0"
+    repo: https://prometheus-community.github.io/helm-charts
+    valuesFrom:
+      - kind: ConfigMap
+        name: monitoring-values

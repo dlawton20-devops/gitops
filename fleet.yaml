@@ -7,8 +7,7 @@ spec:
   repo: https://github.com/dlawton20-devops/gitops
   branch: main
   paths:
-    - monitoring/base
-    - monitoring/overlays/dev
+    - monitoring
   targets:
     - name: dev-clusters
       clusterSelector:
