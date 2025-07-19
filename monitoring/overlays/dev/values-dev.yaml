@@ -2,9 +2,4 @@ spec:
   helm:
     values:
       grafana:
-        enabled: true
         adminPassword: "dev123"
-      prometheus:
-        enabled: true
-      alertmanager:
-        enabled: true
