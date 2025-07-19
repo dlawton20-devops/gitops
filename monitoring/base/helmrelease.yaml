@@ -1,20 +1,44 @@
 apiVersion: fleet.cattle.io/v1alpha1
-kind: HelmApp
+kind: Bundle
 metadata:
   name: monitoring
   namespace: fleet-local
 spec:
-  helm:
-    releaseName: monitoring
-    repo: https://prometheus-community.github.io/helm-charts
-    chart: kube-prometheus-stack
-    version: "55.5.0"
-    values:
-      grafana:
-        enabled: true
-        adminPassword: "changeme"
-      prometheus:
-        enabled: true
-      alertmanager:
-        enabled: true
-  namespace: monitoring
+  resources:
+  - content: |
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: monitoring
+        labels:
+          name: monitoring
+    name: namespace.yaml
+  - content: |
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: nginx-test
+        namespace: monitoring
+        labels:
+          app: nginx-test
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: nginx-test
+        template:
+          metadata:
+            labels:
+              app: nginx-test
+          spec:
+            containers:
+            - name: nginx
+              image: nginx:latest
+              ports:
+              - containerPort: 80
+    name: nginx-deployment.yaml
+  targets:
+  - clusterSelector:
+      matchLabels:
+        env: dev
+    defaultNamespace: monitoring

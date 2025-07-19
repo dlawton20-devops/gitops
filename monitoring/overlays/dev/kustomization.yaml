@@ -1,8 +1,2 @@
 resources:
   - ../../base
-
-patches:
-  - path: values-dev.yaml
-    target:
-      kind: HelmApp
-      name: monitoring
