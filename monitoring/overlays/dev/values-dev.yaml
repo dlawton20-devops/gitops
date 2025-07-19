@@ -3,3 +3,7 @@ spec:
     values:
       grafana:
         adminPassword: "dev123"
+      prometheus:
+        enabled: true
+      alertmanager:
+        enabled: true

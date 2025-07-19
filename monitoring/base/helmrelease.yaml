@@ -12,3 +12,7 @@ spec:
       grafana:
         enabled: true
         adminPassword: "changeme"
+      prometheus:
+        enabled: true
+      alertmanager:
+        enabled: true
