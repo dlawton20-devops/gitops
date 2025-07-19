@@ -1,5 +1,2 @@
 spec:
-  helm:
-    values:
-      grafana:
-        adminPassword: "dev123"
+  replicas: 2
