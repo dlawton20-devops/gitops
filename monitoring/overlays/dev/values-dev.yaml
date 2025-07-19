@@ -1,9 +1,4 @@
 spec:
   helm:
     values:
-      grafana:
-        adminPassword: "dev123"
-      prometheus:
-        enabled: true
-      alertmanager:
-        enabled: true
+      replicaCount: 2
