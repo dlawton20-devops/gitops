@@ -1,0 +1,10 @@
+resources:
+  - helmrelease.yaml
+
+configMapGenerator:
+  - name: monitoring-values
+    files:
+      - values.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true

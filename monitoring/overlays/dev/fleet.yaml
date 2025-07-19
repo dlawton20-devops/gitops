@@ -1,0 +1,7 @@
+defaultNamespace: monitoring
+
+targets:
+  - name: dev-clusters
+    clusterSelector:
+      matchLabels:
+        env: dev

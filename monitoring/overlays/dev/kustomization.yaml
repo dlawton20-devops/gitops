@@ -1,0 +1,8 @@
+resources:
+  - ../../base
+
+patches:
+  - path: values-dev.yaml
+    target:
+      kind: ConfigMap
+      name: monitoring-values
