@@ -1,0 +1,16 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: monitoring-dev
+  namespace: fleet-local
+spec:
+  repo: https://github.com/dlawton20-devops/gitops
+  branch: main
+  paths:
+    - monitoring/base
+    - monitoring/overlays/dev
+  targets:
+    - name: dev-clusters
+      clusterSelector:
+        matchLabels:
+          env: dev
