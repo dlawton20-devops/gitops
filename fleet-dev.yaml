@@ -7,11 +7,8 @@ spec:
   repo: https://github.com/dlawton20-devops/gitops
   branch: dev
   paths:
-    - monitoring
-  # Harbor authentication (uncomment if using Harbor)
-  # helmSecretName: harbor-secret
+  - monitoring
   targets:
-    - name: dev-clusters
-      clusterSelector:
-        matchLabels:
-          env: dev
+  - clusterSelector:
+      matchLabels:
+        env: dev 

@@ -1,0 +1,8 @@
+defaultNamespace: monitoring
+targetNamespace: monitoring
+
+# Custom manifests bundle - deployed after CRDs
+targets:
+- clusterSelector:
+    matchLabels:
+      env: dev 

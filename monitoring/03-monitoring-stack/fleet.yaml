@@ -1,13 +1,17 @@
 defaultNamespace: monitoring
 targetNamespace: monitoring
+
+# 03 - Main monitoring stack last
 helm:
   repo: https://prometheus-community.github.io/helm-charts
   chart: kube-prometheus-stack
   version: 55.5.0
+  # Harbor authentication (uncomment if using Harbor)
+  # helmSecretName: harbor-secret
   valuesFiles:
     - values.yaml
-    - values-override.yaml
     - values-custom.yaml
+
 targets:
 - clusterSelector:
     matchLabels:

@@ -1,0 +1,15 @@
+defaultNamespace: monitoring
+targetNamespace: monitoring
+
+# 01 - CRDs first
+helm:
+  chart: prometheus-operator-crds
+  repo: https://prometheus-community.github.io/helm-charts
+  version: 0.0.1
+
+targets:
+- clusterName: local  # Match by exact cluster name
+# Alternative: clusterSelector with env=dev label
+# - clusterSelector:
+#     matchLabels:
+#       env: dev 

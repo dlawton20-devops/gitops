@@ -1,13 +1,12 @@
 defaultNamespace: monitoring
 targetNamespace: monitoring
+
+# CRDs should be deployed first
 helm:
+  chart: prometheus-operator-crds
   repo: https://prometheus-community.github.io/helm-charts
-  chart: kube-prometheus-stack
-  version: 55.5.0
-  valuesFiles:
-    - values.yaml
-    - values-override.yaml
-    - values-custom.yaml
+  version: 0.0.1
+
 targets:
 - clusterSelector:
     matchLabels:
