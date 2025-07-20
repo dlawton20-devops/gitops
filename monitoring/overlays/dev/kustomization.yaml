@@ -1,8 +1,0 @@
-resources:
-  - ../../base
-
-patches:
-  - path: values-dev.yaml
-    target:
-      kind: Deployment
-      name: nginx-test

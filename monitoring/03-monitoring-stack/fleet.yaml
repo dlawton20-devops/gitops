@@ -3,7 +3,6 @@ targetNamespace: monitoring
 
 # 03 - Main monitoring stack last
 helm:
-  repo: oci://harbor.your-domain.com/monitoring
   chart: kube-prometheus-stack
   version: 55.5.0
   helmSecretName: harbor-secret

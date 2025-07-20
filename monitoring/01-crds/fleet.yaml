@@ -2,10 +2,11 @@ defaultNamespace: monitoring
 targetNamespace: monitoring
 
 # 01 - CRDs first
+# Chart.yaml now references Harbor repository
 helm:
   chart: prometheus-operator-crds
-  repo: https://prometheus-community.github.io/helm-charts
   version: 0.0.1
+  helmSecretName: harbor-secret
 
 targets:
 - clusterName: local  # Match by exact cluster name
