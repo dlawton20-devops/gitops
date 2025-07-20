@@ -3,11 +3,10 @@ targetNamespace: monitoring
 
 # 03 - Main monitoring stack last
 helm:
-  repo: https://prometheus-community.github.io/helm-charts
+  repo: oci://harbor.your-domain.com/monitoring
   chart: kube-prometheus-stack
   version: 55.5.0
-  # Harbor authentication (uncomment if using Harbor)
-  # helmSecretName: harbor-secret
+  helmSecretName: harbor-secret
   valuesFiles:
     - values.yaml
     - values-custom.yaml
