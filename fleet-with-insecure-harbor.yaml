@@ -7,14 +7,14 @@ spec:
   repo: https://gitlab.com/your-username/your-repo.git
   branch: dev
   paths:
-    - monitoring/01-crds
-    - monitoring/02-custom-manifests
-    - monitoring/03-monitoring-stack
+    - monitoring
   # GitLab authentication
   clientSecretName: gitlab-secret
-  # Path-specific Harbor authentication (per Fleet docs)
-  # https://fleet.rancher.io/gitrepo-add#use-different-helm-credentials-for-each-path
-  helmSecretName: monitoring-path-credentials
+  # Harbor authentication for Helm charts
+  helmSecretName: harbor-secret
+  # Harbor insecure settings
+  helmRepoURLRegex: "harbor.your-domain.com"
+  helmRepoURLRegexInsecure: true
   targets:
     - name: dev-clusters
       clusterSelector:
